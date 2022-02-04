@@ -10,8 +10,9 @@ import java.util.List;
 public class MarkdownParseTest {
     @Test
     public void addition() {
-        assertEquals(2, 1 + 1);
+        assertEquals(5, 1 + 1);
     }
+    /*
     @Test
     public void testGetLinks1() throws IOException{
         String file=Files.readString(Path.of("test-file.md"));
@@ -43,4 +44,5 @@ public class MarkdownParseTest {
         file=Files.readString(Path.of("test-file5.md"));
         assertEquals(MarkdownParse.getLinks(file),List.of());
     }
+    */
 }
