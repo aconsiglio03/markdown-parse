@@ -44,6 +44,32 @@ public class MarkdownParseTest {
         file=Files.readString(Path.of("test-file5.md"));
         assertEquals(MarkdownParse.getLinks(file),List.of());
     }
+
+    @Test
+    public void testSnippet1(){
+        Path file = Path.of("snippet1.md");
+        String contents = Files.readString(file);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(List.of("'google.com", "google.com", "ucsd.edu"), links);
+    }
+
+    @Test
+    public void testSnippet2(){
+        Path file = Path.of("snippet2.md");
+        String contents = Files.readString(file);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(List.of("a.com", "a.com(())", "example.com"), links);
+    }
+
+    @Test
+    public void testSnippet3(){
+        Path file = Path.of(snippet3.md);
+        String contents = Files.readString(file);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(List.of("https://ucsd-cse15l-w22.github.io/"), links);
+    }
+
+    
     /*
     @Test
     public void testGetLinksPhoto() throws IOException{
